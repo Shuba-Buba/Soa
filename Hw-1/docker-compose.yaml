@@ -1,0 +1,42 @@
+services:
+  proxy:
+    build: .
+    command: [ "proxy" ]
+    ports:
+      - "2000:2000/udp"
+
+  xml:
+    build: .
+    hostname: "xml"
+    command: [ "xml" ]
+
+  native:
+    build: .
+    hostname: "native"
+    command: [ "native" ]
+
+  proto:
+    build: .
+    hostname: "proto"
+    command: [ "proto" ]
+
+  json:
+    build: .
+    hostname: "json"
+    command: [ "json" ]
+  
+  avro:
+    build: .
+    hostname: "avro"
+    command: [ "avro" ]
+
+  yaml:
+    build: .
+    hostname: "yaml"
+    command: [ "yaml" ]
+
+  msgpack:
+    build: .
+    hostname: "msgpack"
+    command: [ "msgpack" ]
+
