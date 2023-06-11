@@ -59,4 +59,5 @@ type MyStruct struct {
 ```
 
 # Примеры работы
-ToDo
+<img width="865" alt="image" src="https://github.com/Shuba-Buba/Soa/assets/76994301/2dfca5d9-2f76-445a-aaa6-7643cbc54754">
+
