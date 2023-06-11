@@ -1,0 +1,63 @@
+syntax = "proto3";
+
+option go_package = "./my_game";
+
+package mafia;
+
+service Mafia {
+    rpc Start(UserInfo) returns (stream Event) {}
+    rpc VoteProcessing(Victim) returns (Empty) {}
+}
+
+message UserInfo {
+    string username = 1;
+    Role role = 2;
+
+}
+
+message Victim {
+    string username = 1;
+    int32 sessionId = 2;
+}
+
+message User {
+    string username = 1;
+    Role role = 2;
+    int32 sessionId = 3;
+}
+
+message Event {
+    oneof EventVariant {
+        Empty booked = 1;
+        User newGame = 2;
+        Night nightIsComming = 3;
+        Morning morningIsComing = 4;
+        string diedName = 5;
+        string result = 6;
+    }
+}
+
+enum Actions {
+    KILL = 0;
+    CHECK = 1;
+    NOTHING = 2;
+}
+
+message Night {
+    string listOfPeople = 1;
+    Actions action = 2;
+}
+
+message Morning {
+    string listOfPeople = 1;
+    string announce = 2;
+    bool alive = 3;
+}
+
+message Empty {}
+
+enum Role {
+    CIVILIAN = 0;
+    MAFIA = 1;
+    COMISSAR = 2;
+}

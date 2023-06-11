@@ -1,0 +1,72 @@
+version: "3"
+
+services:
+  mafia_server:
+    build:
+      context: .
+      dockerfile: mafia_server.dockerfile
+    hostname: server
+    
+  mafia_client_1:
+    build:
+      context: .
+      dockerfile: mafia_client.dockerfile
+    ports:
+       - "5001:5001/udp"
+    command: [ "5001" ]
+
+  mafia_client_2:
+    build:
+      context: .
+      dockerfile: mafia_client.dockerfile
+    ports:
+       - "5002:5002/udp"
+    command: [ "5002" ]
+
+  mafia_client_3:
+    build:
+      context: .
+      dockerfile: mafia_client.dockerfile
+    ports:
+       - "5003:5003/udp"
+    command: [ "5003" ]
+
+  mafia_client_4:
+    build:
+      context: .
+      dockerfile: mafia_client.dockerfile
+    ports:
+       - "5004:5004/udp"
+    command: [ "5004" ]
+
+  mafia_client_5:
+    build:
+      context: .
+      dockerfile: mafia_client.dockerfile
+    ports:
+       - "5005:5005/udp"
+    command: [ "5005" ]
+
+  mafia_client_6:
+    build:
+      context: .
+      dockerfile: mafia_client.dockerfile
+    ports:
+       - "5006:5006/udp"
+    command: [ "5006" ]
+
+  mafia_client_7:
+    build:
+      context: .
+      dockerfile: mafia_client.dockerfile
+    ports:
+       - "5007:5007/udp"
+    command: [ "5007" ]
+
+  mafia_client_8:
+    build:
+      context: .
+      dockerfile: mafia_client.dockerfile
+    ports:
+       - "5008:5008/udp"
+    command: [ "5008" ]
